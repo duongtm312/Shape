@@ -1,11 +1,11 @@
 package Shape;
 
-public class Circle extends Shape {
+public class Circle extends Shape implements Resizeable {
     private double radius = 1.0;
     public Circle() {
     }
 
-    public Circle(double radius) {
+    public Circle(double radius)  {
         this.radius = radius;
     }
 
@@ -35,5 +35,11 @@ public class Circle extends Shape {
                 + getRadius()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    @Override
+    public void resize( double x) {
+        this.radius+=this.radius*x/100;
+        System.out.println("Đã tăng kích thước lên " + x+"%");
     }
 }

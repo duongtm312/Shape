@@ -1,6 +1,6 @@
 package Shape;
 
-public class Rectangle extends Shape{
+public class Rectangle extends Shape implements Resizeable,Colorable{
     private double width = 1.0;
     private double length = 1.0;
 
@@ -49,5 +49,17 @@ public class Rectangle extends Shape{
                 + getLength()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    @Override
+    public void resize(double x) {
+        this.width+=this.width*x/100;
+        this.length+=this.length*x/100;
+        System.out.println("Đã tăng kích thước lên " + x+"%");
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println(" Color all four sides..");
     }
 }
